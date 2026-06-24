@@ -1,92 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes liens utiles</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            background: #121212;
-            color: #ffffff;
-        }
+<title>Mes liens utiles</title>
 
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+<style>
+body{
+    font-family:Arial,sans-serif;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+    background:#121212;
+    color:white;
+}
 
-        .carte {
-            background: #1e1e1e;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 12px;
-            border: 1px solid #333;
-            transition: transform 0.2s;
-        }
+h1{
+    text-align:center;
+}
 
-        .carte:hover {
-            transform: translateY(-2px);
-        }
+.carte{
+    background:#1e1e1e;
+    border:1px solid #333;
+    border-radius:12px;
+    padding:15px;
+    margin:15px 0;
+}
 
-        .carte h2 {
-            margin-top: 0;
-        }
+a{
+    color:#4da6ff;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-        a {
-            text-decoration: none;
-            color: #4da6ff;
-            font-weight: bold;
-        }
+a:hover{
+    text-decoration:underline;
+}
+</style>
 
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #888;
-            font-size: 14px;
-        }
-    </style>
 </head>
-
 <body>
 
-    <h1>🌙 Mes liens utiles</h1>
+<h1>🌙 Mes liens utiles</h1>
 
-    <div class="carte">
-        <h2>ChatGPT</h2>
-        <p>Assistant IA</p>
-        <a href="https://chatgpt.com" target="_blank">
-            Ouvrir
-        </a>
-    </div>
+<div id="conteneur-liens"></div>
 
-    <div class="carte">
-        <h2>YouTube</h2>
-        <p>Plateforme vidéo</p>
-        <a href="https://youtube.com" target="_blank">
-            Ouvrir
-        </a>
-    </div>
+<script>
 
-    <div class="carte">
-        <h2>GitHub</h2>
-        <p>Mes projets et dépôts</p>
-        <a href="https://github.com" target="_blank">
-            Ouvrir
-        </a>
-    </div>
+const liens = [
 
-    <div class="footer">
-        Mon portail personnel de liens
-    </div>
+    {
+        nom: "ChatGPT",
+        description: "Assistant IA",
+        url: "https://chatgpt.com"
+    },
+
+    {
+        nom: "YouTube",
+        description: "Plateforme vidéo",
+        url: "https://youtube.com"
+    },
+
+    {
+        nom: "GitHub",
+        description: "Mes projets",
+        url: "https://github.com"
+    }
+
+];
+
+const conteneur = document.getElementById("conteneur-liens");
+
+liens.forEach(lien => {
+
+    conteneur.innerHTML += `
+        <div class="carte">
+            <h2>${lien.nom}</h2>
+            <p>${lien.description}</p>
+            <a href="${lien.url}" target="_blank">
+                Ouvrir
+            </a>
+        </div>
+    `;
+
+});
+
+</script>
 
 </body>
 </html>
